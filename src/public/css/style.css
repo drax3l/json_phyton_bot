@@ -1,0 +1,91 @@
+/* General styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: url('/img/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Navegación */
+.menu {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    padding: 10px 20px;
+    position: fixed; /* Fija la barra en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;  /*Asegura que esté encima de otros elementos */
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.menu a:hover {
+    color: #f39c12; /* Cambia el color al pasar el mouse */
+}
+
+/* Espaciado para evitar que el contenido quede detrás de la barra */
+body > *:not(.menu) {
+    margin-top: 70px; /* Altura de la barra de navegación */
+}
+
+/* Formulario de contacto */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form div {
+    margin-bottom: 15px;
+}
+
+.contact-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
+}
+
+.contact-form button {
+    background: #f8b400;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.contact-form button:hover {
+    background: #f39c12;
+}

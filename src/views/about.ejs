@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <%- include('partials/head') %>
+    <style>
+        /* Estilos para la sección "Sobre Nosotros" */
+        .about-container {
+            padding: 40px 20px;
+            color: white;
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/background.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            text-align: justify;
+        }
+
+        .about-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #f8b400;
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-image {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .about-image img {
+            max-width: 90%;
+            border: 5px solid #f8b400; /* Borde amarillo */
+            border-radius: 10px; /* Esquinas redondeadas */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra */
+        }
+    </style>
+</head>
+<body>
+    <%- include('partials/navigation') %>
+    
+    <!-- Sección principal -->
+    <div class="about-container">
+        <h1 class="about-title">Sobre Nosotros</h1>
+        <div class="about-content">
+            <p>
+                Bienvenido a nuestra tienda de ropa. Nos apasiona ofrecerte no solo las últimas tendencias en moda, 
+                sino también prendas de la más alta calidad, diseñadas para reflejar tu estilo único y personalidad.
+            </p>
+            <p>
+                Desde nuestros inicios, hemos trabajado con un compromiso constante de brindar una experiencia de compra excepcional. 
+                Cada prenda que encuentras aquí cuenta una historia: la tuya. Queremos que te sientas seguro, elegante y cómodo en 
+                cada paso que des.
+            </p>
+            <p>
+                ¡Gracias por ser parte de nuestra familia! Nos sentimos honrados de acompañarte en cada ocasión, desde los momentos 
+                más cotidianos hasta los más especiales. Esto es más que moda; es una comunidad.
+            </p>
+        </div>
+        <div class="about-image">
+            <img src="/img/trabajo.png" alt="Nuestro equipo trabajando" />
+        </div>
+    </div>
+
+    <%- include('partials/footer') %>
+</body>
+</html>
