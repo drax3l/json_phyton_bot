@@ -149,3 +149,13 @@ footer .social-icons a:hover {
     height: 1200px; /* Altura para probar el diseño con scroll */
     padding: 20px;
 }
+/* Chatbot */
+.chatbot-container {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+    overflow: hidden;
+}
