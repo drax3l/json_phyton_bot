@@ -5,18 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%= title %></title>
     <%- include('partials/head') %>
+    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/css/style.css">
+
     <style>
-        /* Estilos para la sección "Sobre Nosotros" */
+        /* Fondo global uniforme */
+        body {
+            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)), url('/img/background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: white;
+        }
+
+        /* Estilos para el contenedor principal */
         .about-container {
             padding: 40px 20px;
             color: white;
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.8)), url('/img/background.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 10px;
+            background: none; /* Hereda el fondo del body */
             text-align: justify;
+            margin-bottom: 0; /* Evita espacios adicionales */
         }
 
+        /* Título de la sección */
         .about-title {
             font-size: 2.5rem;
             margin-bottom: 20px;
@@ -25,12 +36,14 @@
             color: #f8b400;
         }
 
+        /* Contenido de la sección */
         .about-content p {
             font-size: 1rem;
             line-height: 1.8;
             margin-bottom: 20px;
         }
 
+        /* Imagen en la sección */
         .about-image {
             margin-top: 20px;
             display: flex;
@@ -43,12 +56,18 @@
             border-radius: 10px; /* Esquinas redondeadas */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra */
         }
+
+        /* Ajuste del footer */
+        footer {
+            margin-top: 0; /* Elimina separación extra con el contenido */
+        }
     </style>
 </head>
 <body>
+    <!-- Navegación -->
     <%- include('partials/navigation') %>
     
-    <!-- Sección principal -->
+    <!-- Sección principal "Sobre Nosotros" -->
     <div class="about-container">
         <h1 class="about-title">Sobre Nosotros</h1>
         <div class="about-content">
@@ -71,7 +90,10 @@
         </div>
     </div>
 
+    <!-- Footer -->
     <%- include('partials/footer') %>
+    
+    <!-- Chatbot -->
     <%- include('partials/bot') %>
 </body>
 </html>

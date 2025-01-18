@@ -3,10 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Chatbot</title>
+    <!-- Incluye el CSS desde la carpeta public/css -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <div class="chatbot-container">
+    <!-- Ícono del chatbot -->
+    <div class="chatbot-icon" id="chatbot-icon">
+        <img src="/img/chat-icon.png" alt="Chatbot" />
+    </div>
+
+    <!-- Contenedor del chatbot (oculto por defecto) -->
+    <div class="chatbot-container" id="chatbot-container">
+        <div class="chatbot-header">
+            <button id="close-chatbot" class="close-btn">X</button>
+        </div>
         <iframe
             allow="microphone;"
             width="350"
@@ -14,5 +25,8 @@
             src="https://console.dialogflow.com/api-client/demo/embedded/214f80e5-ab5a-45d4-9251-f646e8255686">
         </iframe>
     </div>
+
+    <!-- Incluye el JavaScript desde la carpeta public/js -->
+    <script src="/js/chatbot.js"></script>
 </body>
 </html>

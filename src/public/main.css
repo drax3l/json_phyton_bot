@@ -7,6 +7,9 @@ body {
     background: url('/img/background.jpg') no-repeat center center fixed;
     background-size: cover;
     color: white;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
 }
 
 /* Navbar */
@@ -51,9 +54,10 @@ body {
     color: #f39c12;
 }
 
-/* Espaciado para el contenido principal */
+/* Main Content */
 .main-content {
-    padding-top: 100px; /* Espacio para evitar que el navbar tape el contenido */
+    flex: 1; /* Esto permite que el contenido crezca según sea necesario */
+    padding-top: 80px; /* Evita que el navbar tape el contenido */
     text-align: center;
 }
 
@@ -84,11 +88,14 @@ body {
 }
 
 /* Footer */
-footer {
+footer.footer {
     background: rgba(0, 0, 0, 0.95);
     color: white;
     padding: 40px 20px;
-    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+    border-top: 3px solid #f39c12;
+    margin-top: auto; /* Empuja el footer al final */
 }
 
 footer .footer-container {
@@ -97,10 +104,8 @@ footer .footer-container {
     flex-wrap: wrap;
 }
 
-footer .column {
-    flex: 1;
-    margin: 10px 20px;
-    min-width: 200px;
+footer .footer-logo h2 {
+    margin-bottom: 10px;
 }
 
 footer h3 {
@@ -131,6 +136,7 @@ footer ul li a:hover {
 footer .social-icons {
     display: flex;
     gap: 15px;
+    justify-content: center;
 }
 
 footer .social-icons a {
@@ -144,11 +150,11 @@ footer .social-icons a:hover {
     color: #f39c12;
 }
 
-/* Links de prueba */
-.content {
-    height: 1200px; /* Altura para probar el diseño con scroll */
-    padding: 20px;
+/* Asegura que el ícono del chatbot no tape el footer */
+.main-content {
+    padding-bottom: 100px; /* Deja espacio para el chatbot */
 }
+
 /* Chatbot */
 .chatbot-container {
     position: fixed;
@@ -158,4 +164,115 @@ footer .social-icons a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     overflow: hidden;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .navbar a {
+        font-size: 18px;
+    }
+    footer .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Estilos para el formulario de contacto */
+.contact-form {
+    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con algo de transparencia */
+    padding: 40px;
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Sombra sutil para profundidad */
+    max-width: 700px;
+    margin: 50px auto; /* Centrado en la página con márgenes */
+    color: white;
+    border: 2px solid #f39c12; /* Borde dorado para dar estilo */
+}
+
+/* Mejora el estilo de los títulos */
+.contact-form h2 {
+    text-align: center;
+    font-size: 30px;
+    color: #f39c12;
+    margin-bottom: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Espaciado entre los grupos de los campos */
+.contact-form .form-group {
+    margin-bottom: 25px;
+}
+
+/* Estilo de las etiquetas de los campos */
+.contact-form label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #f39c12; /* Color dorado para las etiquetas */
+}
+
+/* Estilo de los campos de entrada y textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border-radius: 8px;
+    border: 2px solid #f39c12; /* Borde dorado */
+    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    color: white;
+    font-size: 16px;
+    transition: all 0.3s ease; /* Transición suave al interactuar */
+}
+
+/* Efecto de hover y enfoque en los campos */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border: 2px solid #e67e22; /* Borde naranja al enfocar */
+    background: rgba(255, 255, 255, 0.2); /* Fondo más claro al enfocar */
+}
+
+/* Estilo del botón de envío */
+.contact-form button {
+    background-color: #f39c12;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 100%;
+    margin-top: 20px; /* Separación del botón con el resto del formulario */
+}
+
+/* Efecto al pasar el ratón sobre el botón */
+.contact-form button:hover {
+    background-color: #e67e22;
+    transform: scale(1.05); /* Efecto de agrandar */
+}
+
+/* Mejora en el espaciado para dispositivos pequeños */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 30px;
+    }
+
+    .contact-form h2 {
+        font-size: 25px;
+    }
+
+    .contact-form label {
+        font-size: 16px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        font-size: 14px;
+    }
+
+    .contact-form button {
+        font-size: 16px;
+    }
 }

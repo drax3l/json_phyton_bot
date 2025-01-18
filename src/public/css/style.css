@@ -8,18 +8,18 @@ body {
     color: white;
 }
 
-/* Navegación */
 .menu {
     display: flex;
     justify-content: center;
     gap: 20px;
-    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro semitransparente */
+    background-color: #f39c12; /* Fondo naranja */
     padding: 10px 20px;
     position: fixed; /* Fija la barra en la parte superior */
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;  /*Asegura que esté encima de otros elementos */
+    z-index: 1000;  /* Asegura que esté encima de otros elementos */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para separar visualmente */
 }
 
 .menu a {
@@ -36,7 +36,7 @@ body {
 
 /* Espaciado para evitar que el contenido quede detrás de la barra */
 body > *:not(.menu) {
-    margin-top: 70px; /* Altura de la barra de navegación */
+    margin-top: 0px; /* Altura de la barra de navegación */
 }
 
 /* Formulario de contacto */
@@ -88,4 +88,63 @@ body > *:not(.menu) {
 
 .contact-form button:hover {
     background: #f39c12;
+}
+
+.chatbot-icon {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: transparent;
+    padding: 10px;
+    border-radius: 50%; /* Hace que el borde sea circular */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una ligera sombra */
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.chatbot-icon img {
+    width: 50px; /* Tamaño de la imagen */
+    height: 50px; /* Tamaño de la imagen */
+    border-radius: 50%; /* Hace la imagen circular */
+    border: 3px solid #f39c12; /* Borde alrededor de la imagen */
+}
+
+/* Estilo del contenedor del chatbot */
+.chatbot-container {
+    display: none;
+    position: fixed;
+    bottom: 90px; /* Asegura que el chatbot se muestre un poco más arriba que el ícono */
+    right: 30px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra para darle un aspecto más elegante */
+    z-index: 999;
+    overflow: hidden;
+}
+
+/* Encabezado del chatbot */
+.chatbot-header {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    text-align: right;
+}
+
+/* Estilo para el botón de cerrar */
+.close-btn {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.close-btn:hover {
+    color: #c0392b; /* Color rojo al pasar el mouse */
+}
+
+/* Estilo del iframe (ventana del chatbot) */
+.chatbot-container iframe {
+    border: none;
+    border-radius: 0 0 10px 10px;
 }

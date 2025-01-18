@@ -10,6 +10,9 @@ app.set('views', join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 app.use(router)
 
+app.get('/chatbot', (req, res) => {
+    res.render('partials/bot');  // Cambia esto para buscar el archivo en partials
+});
 app.use(express.static(join(__dirname,'public')))
 
 app.listen(3000)
