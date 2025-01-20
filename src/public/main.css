@@ -56,9 +56,10 @@ body {
 
 /* Main Content */
 .main-content {
-    flex: 1; /* Esto permite que el contenido crezca según sea necesario */
+    flex: 1; /* Permite que el contenido crezca según sea necesario */
     padding-top: 80px; /* Evita que el navbar tape el contenido */
     text-align: center;
+    padding-bottom: 200px; /* Deja espacio para el chatbot */
 }
 
 /* Hero Section */
@@ -70,7 +71,7 @@ body {
     margin-top: 50px;
 }
 
-/* Botón */
+/* Buttons */
 .btn {
     background-color: #f39c12;
     color: white;
@@ -150,11 +151,6 @@ footer .social-icons a:hover {
     color: #f39c12;
 }
 
-/* Asegura que el ícono del chatbot no tape el footer */
-.main-content {
-    padding-bottom: 100px; /* Deja espacio para el chatbot */
-}
-
 /* Chatbot */
 .chatbot-container {
     position: fixed;
@@ -164,20 +160,24 @@ footer .social-icons a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     overflow: hidden;
+    opacity: 0; /* Inicialmente oculto */
+    transform: translateY(20px); /* Inicia ligeramente desplazado */
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Responsiveness */
-@media (max-width: 768px) {
-    .navbar a {
-        font-size: 18px;
-    }
-    footer .footer-container {
-        flex-direction: column;
-        align-items: center;
-    }
+/* Mostrar cuando se activa */
+.chatbot-container.show {
+    opacity: 1;
+    transform: translateY(0); /* Mueve el chatbot a su posición original */
 }
 
-/* Estilos para el formulario de contacto */
+/* Ocultar con animación */
+.chatbot-container.hide {
+    opacity: 0;
+    transform: translateY(20px); /* Mueve el chatbot hacia abajo mientras desaparece */
+}
+
+/* Contact Form */
 .contact-form {
     background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con algo de transparencia */
     padding: 40px;
@@ -189,7 +189,6 @@ footer .social-icons a:hover {
     border: 2px solid #f39c12; /* Borde dorado para dar estilo */
 }
 
-/* Mejora el estilo de los títulos */
 .contact-form h2 {
     text-align: center;
     font-size: 30px;
@@ -198,12 +197,10 @@ footer .social-icons a:hover {
     font-family: 'Roboto', sans-serif;
 }
 
-/* Espaciado entre los grupos de los campos */
 .contact-form .form-group {
     margin-bottom: 25px;
 }
 
-/* Estilo de las etiquetas de los campos */
 .contact-form label {
     font-size: 18px;
     font-weight: bold;
@@ -212,7 +209,6 @@ footer .social-icons a:hover {
     color: #f39c12; /* Color dorado para las etiquetas */
 }
 
-/* Estilo de los campos de entrada y textarea */
 .contact-form input,
 .contact-form textarea {
     width: 100%;
@@ -222,10 +218,9 @@ footer .social-icons a:hover {
     background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
     color: white;
     font-size: 16px;
-    transition: all 0.3s ease; /* Transición suave al interactuar */
+    transition: all 0.3s ease;
 }
 
-/* Efecto de hover y enfoque en los campos */
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
@@ -233,7 +228,6 @@ footer .social-icons a:hover {
     background: rgba(255, 255, 255, 0.2); /* Fondo más claro al enfocar */
 }
 
-/* Estilo del botón de envío */
 .contact-form button {
     background-color: #f39c12;
     color: white;
@@ -244,17 +238,26 @@ footer .social-icons a:hover {
     border-radius: 8px;
     transition: background-color 0.3s ease, transform 0.3s ease;
     width: 100%;
-    margin-top: 20px; /* Separación del botón con el resto del formulario */
+    margin-top: 20px;
 }
 
-/* Efecto al pasar el ratón sobre el botón */
 .contact-form button:hover {
     background-color: #e67e22;
-    transform: scale(1.05); /* Efecto de agrandar */
+    transform: scale(1.05);
 }
 
-/* Mejora en el espaciado para dispositivos pequeños */
+/* Responsiveness */
 @media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .chatbot-container {
+        width: 90%;
+        max-height: 400px;
+    }
+
     .contact-form {
         padding: 30px;
     }

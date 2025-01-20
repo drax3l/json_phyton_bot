@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chatbot</title>
-    <!-- Incluye el CSS desde la carpeta public/css -->
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -13,20 +12,33 @@
         <img src="/img/chat-icon.png" alt="Chatbot" />
     </div>
 
-    <!-- Contenedor del chatbot (oculto por defecto) -->
+    <!-- Contenedor del chatbot con iframe (oculto por defecto) -->
     <div class="chatbot-container" id="chatbot-container">
         <div class="chatbot-header">
             <button id="close-chatbot" class="close-btn">X</button>
         </div>
         <iframe
+            id="iframe-chatbot"
             allow="microphone;"
             width="350"
             height="430"
-            src="https://console.dialogflow.com/api-client/demo/embedded/214f80e5-ab5a-45d4-9251-f646e8255686">
+            src="https://console.dialogflow.com/api-client/demo/embedded/214f80e5-ab5a-45d4-9251-f646e8255686"
+            style="display:none;">
         </iframe>
     </div>
 
+    <!-- Contenedor del df-messenger (oculto por defecto) -->
+    <df-messenger
+        id="df-messenger"
+        intent="WELCOME"
+        chat-title="URBAN_THREADS"
+        agent-id="19859be0-7ab6-414a-baf4-055672da6f7a"
+        language-code="es"
+        style="display:none;">
+    </df-messenger>
+
     <!-- Incluye el JavaScript desde la carpeta public/js -->
     <script src="/js/chatbot.js"></script>
+    <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
 </body>
 </html>

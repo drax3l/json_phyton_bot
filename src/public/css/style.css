@@ -8,6 +8,7 @@ body {
     color: white;
 }
 
+/* Navbar styles */
 .menu {
     display: flex;
     justify-content: center;
@@ -18,7 +19,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    z-index: 1000;  /* Asegura que esté encima de otros elementos */
+    z-index: 1000; /* Asegura que esté encima de otros elementos */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para separar visualmente */
 }
 
@@ -27,124 +28,77 @@ body {
     text-decoration: none;
     font-size: 18px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .menu a:hover {
     color: #f39c12; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Efecto de aumento al pasar el ratón */
 }
 
-/* Espaciado para evitar que el contenido quede detrás de la barra */
-body > *:not(.menu) {
-    margin-top: 0px; /* Altura de la barra de navegación */
-}
-
-/* Formulario de contacto */
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 20px;
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.contact-form div {
-    margin-bottom: 15px;
-}
-
-.contact-form label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 10px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #f39c12;
-    box-shadow: 0 0 5px rgba(243, 156, 18, 0.5);
-}
-
-.contact-form button {
-    background: #f8b400;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.contact-form button:hover {
-    background: #f39c12;
-}
-
+/* Chatbot styles */
 .chatbot-icon {
     position: fixed;
-    bottom: 30px;
+    bottom: 120px;
     right: 30px;
+    z-index: 1000;
     background-color: transparent;
     padding: 10px;
-    border-radius: 50%; /* Hace que el borde sea circular */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una ligera sombra */
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra ligera */
     cursor: pointer;
-    z-index: 1000;
+    transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .chatbot-icon img {
-    width: 50px; /* Tamaño de la imagen */
-    height: 50px; /* Tamaño de la imagen */
-    border-radius: 50%; /* Hace la imagen circular */
-    border: 3px solid #f39c12; /* Borde alrededor de la imagen */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 3px solid #f39c12;
 }
 
-/* Estilo del contenedor del chatbot */
 .chatbot-container {
-    display: none;
     position: fixed;
-    bottom: 90px; /* Asegura que el chatbot se muestre un poco más arriba que el ícono */
+    bottom: 160px;
     right: 30px;
-    background-color: #ffffff;
+    z-index: 1000;
+    width: 350px;
+    max-height: 500px;
     border-radius: 10px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2); /* Sombra para darle un aspecto más elegante */
-    z-index: 999;
     overflow: hidden;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
+    display: none;
+    background-color: white;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Encabezado del chatbot */
-.chatbot-header {
-    background-color: #f39c12;
-    color: white;
-    padding: 10px;
-    text-align: right;
+/* Mostrar cuando se activa */
+.chatbot-container.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
-/* Estilo para el botón de cerrar */
-.close-btn {
-    background-color: transparent;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+/* Ocultar con animación */
+.chatbot-container.hide {
+    opacity: 0;
+    transform: translateY(20px);
 }
 
-.close-btn:hover {
-    color: #c0392b; /* Color rojo al pasar el mouse */
-}
+/* Media Queries for responsiveness */
+@media (max-width: 768px) {
+    .menu {
+        justify-content: space-between;
+    }
 
-/* Estilo del iframe (ventana del chatbot) */
-.chatbot-container iframe {
-    border: none;
-    border-radius: 0 0 10px 10px;
+    .chatbot-container {
+        width: 90%;
+        max-height: 400px;
+    }
+
+    .chatbot-icon {
+        bottom: 100px;
+        right: 20px;
+    }
 }
