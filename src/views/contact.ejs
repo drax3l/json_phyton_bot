@@ -7,8 +7,109 @@
     <%- include('partials/head') %>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Ajuste del margen superior para evitar que el contenido se superponga con el navbar */
+        .contact-container {
+            margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+            border-radius: 10px; /* Esquinas redondeadas */
+            color: white; /* Color del texto */
+            max-width: 1200px; /* Limita el ancho máximo del contenedor */
+            margin-left: auto; /* Centra horizontalmente */
+            margin-right: auto; /* Centra horizontalmente */
+        }
+
+        /* Título de la sección */
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: bold;
+            color: #f8b400; /* Color diferenciador */
+        }
+
+        /* Texto de introducción */
+        .intro-text {
+            font-size: 1rem;
+            text-align: center; /* Centra el texto */
+            color: white; /* Color del texto */
+        }
+
+        /* Estilos del formulario */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra los elementos del formulario */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+            max-width: 500px; /* Limita el ancho máximo de los campos del formulario */
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            height: 150px; /* Altura inicial del textarea */
+        }
+
+        .submit-btn {
+            padding: 10px 20px;
+            background-color: #f8b400;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #e0a800;
+        }
+
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 1.5rem; /* Reduce el tamaño de la fuente para dispositivos móviles */
+                margin-bottom: 10px; /* Reduce el margen inferior para dispositivos móviles */
+            }
+
+            .contact-container {
+                padding: 20px 10px; /* Reduce el padding para dispositivos móviles */
+                margin-top: 80px; /* Ajusta el margen superior para dispositivos móviles */
+            }
+
+            .intro-text {
+                font-size: 0.9rem; /* Reduce el tamaño de la fuente para dispositivos móviles */
+            }
+
+            .form-group {
+                max-width: 100%; /* Asegura que los campos del formulario ocupen el ancho completo en móviles */
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navegación -->
     <%- include('partials/navigation') %>
     
     <div class="main-content">
@@ -27,14 +128,17 @@
                 </div>
                 <div class="form-group">
                     <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" placeholder="Escribe tu mensaje aquí" rows="5" required></textarea>
+                    <textarea id="message" name="message" placeholder="Tu mensaje" required></textarea>
                 </div>
-                <button type="submit" class="btn-submit">Enviar</button>
+                <button type="submit" class="submit-btn">Enviar</button>
             </form>
         </div>
     </div>
 
+    <!-- Footer -->
     <%- include('partials/footer') %>
+
+    <!-- Chatbot -->
     <%- include('partials/bot') %>
 </body>
 </html>

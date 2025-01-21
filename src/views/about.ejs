@@ -7,24 +7,17 @@
     <%- include('partials/head') %>
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/style.css">
-
     <style>
-        /* Fondo global uniforme */
-        body {
-            background: linear-gradient(to bottom, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95)), url('/img/background.jpg') no-repeat center center fixed;
-            background-size: cover;
-            margin: 0;
-            padding: 0;
-            color: white;
-        }
-
-        /* Estilos para el contenedor principal */
+        /* Ajuste del margen superior para evitar que el contenido se superponga con el navbar */
         .about-container {
-            padding: 40px 20px;
-            color: white;
-            background: none; /* Hereda el fondo del body */
-            text-align: justify;
-            margin-bottom: 0; /* Evita espacios adicionales */
+            margin-top: 100px; /* Ajusta este valor según la altura de tu navbar */
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente para mejorar la legibilidad */
+            border-radius: 10px; /* Esquinas redondeadas */
+            color: white; /* Color del texto */
+            max-width: 1200px; /* Limita el ancho máximo del contenedor */
+            margin-left: auto; /* Centra horizontalmente */
+            margin-right: auto; /* Centra horizontalmente */
         }
 
         /* Título de la sección */
@@ -33,14 +26,13 @@
             margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
-            color: #f8b400;
+            color: #f8b400; /* Color diferenciador */
         }
 
         /* Contenido de la sección */
         .about-content p {
             font-size: 1rem;
-            line-height: 1.8;
-            margin-bottom: 20px;
+            text-align: center; /* Centra el texto */
         }
 
         /* Imagen en la sección */
@@ -52,14 +44,30 @@
 
         .about-image img {
             max-width: 90%;
-            border: 5px solid #f8b400; /* Borde amarillo */
+            border: 5px solid #f8b400; /* Borde dorado */
             border-radius: 10px; /* Esquinas redondeadas */
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7); /* Sombra */
         }
 
-        /* Ajuste del footer */
-        footer {
-            margin-top: 0; /* Elimina separación extra con el contenido */
+        /* Media queries para dispositivos móviles */
+        @media (max-width: 768px) {
+            .about-title {
+                font-size: 1.5rem; /* Reduce el tamaño de la fuente para dispositivos móviles */
+                margin-bottom: 10px; /* Reduce el margen inferior para dispositivos móviles */
+            }
+
+            .about-container {
+                padding: 20px 10px; /* Reduce el padding para dispositivos móviles */
+                margin-top: 80px; /* Ajusta el margen superior para dispositivos móviles */
+            }
+
+            .about-content p {
+                font-size: 0.9rem; /* Reduce el tamaño de la fuente para dispositivos móviles */
+            }
+
+            .about-image img {
+                max-width: 100%; /* Asegura que la imagen ocupe el ancho completo en móviles */
+            }
         }
     </style>
 </head>
@@ -72,7 +80,7 @@
         <div class="about-content">
             <h1 class="about-title">Sobre Nosotros</h1>
             <p>
-                Bienvenido a nuestra tienda de ropa. Nos apasiona ofrecerte no solo las últimas tendencias en moda, 
+                Bienvenido a Urban Threads nuestra tienda de ropa. Nos apasiona ofrecerte no solo las últimas tendencias en moda, 
                 sino también prendas de la más alta calidad, diseñadas para reflejar tu estilo único y personalidad.
             </p>
             <p>
@@ -92,7 +100,7 @@
 
     <!-- Footer -->
     <%- include('partials/footer') %>
-    
+
     <!-- Chatbot -->
     <%- include('partials/bot') %>
 </body>
