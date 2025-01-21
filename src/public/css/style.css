@@ -59,46 +59,89 @@ body {
 
 .chatbot-container {
     position: fixed;
-    bottom: 160px;
-    right: 30px;
+    bottom: 0;
+    right: 0;
     z-index: 1000;
-    width: 350px;
-    max-height: 500px;
-    border-radius: 10px;
+    width: 100%; /* Ancho completo en móviles */
+    max-width: 400px; /* Ancho limitado en pantallas grandes */
+    max-height: 70vh; /* Evita que ocupe toda la pantalla */
+    border-radius: 10px 10px 0 0; /* Esquinas redondeadas arriba */
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
-    display: none;
+    display: none; /* Oculto por defecto */
     background-color: white;
+    box-shadow: 0 -6px 15px rgba(0, 0, 0, 0.7);
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(100%);
     transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-/* Mostrar cuando se activa */
+/* Mostrar el contenedor activado */
 .chatbot-container.show {
+    display: flex;
+    flex-direction: column;
     opacity: 1;
     transform: translateY(0);
 }
 
 /* Ocultar con animación */
 .chatbot-container.hide {
+    display: flex;
+    flex-direction: column;
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(100%);
 }
 
-/* Media Queries for responsiveness */
-@media (max-width: 768px) {
-    .menu {
-        justify-content: space-between;
-    }
+/* Encabezado del chatbot */
+.chatbot-header {
+    background-color: #f39c12;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    text-align: right; /* Alinea el botón de cerrar */
+    border-bottom: 1px solid #ddd;
+}
 
+/* Botón de cerrar */
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* iframe del chatbot */
+#iframe-chatbot {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block; /* Asegura que sea visible cuando se muestra */
+}
+
+/* df-messenger en móviles */
+df-messenger {
+    width: 100%; /* Ajusta el ancho completo */
+    max-height: 60vh; /* Ajusta la altura para evitar que el teclado lo tape */
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
     .chatbot-container {
-        width: 90%;
-        max-height: 400px;
+        width: 90%; /* Más ancho para dispositivos pequeños */
+        max-height: 70vh; /* Usa una altura basada en la ventana */
+        overflow-y: auto; /* Habilita desplazamiento vertical */
+        bottom: 20px; /* Ajusta la posición para pantallas más pequeñas */
+        right: 5%;
     }
 
     .chatbot-icon {
-        bottom: 100px;
-        right: 20px;
+        bottom: 70px; /* Ajusta la posición del ícono del chatbot */
+        right: 15px;
     }
 }

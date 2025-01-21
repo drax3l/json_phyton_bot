@@ -152,6 +152,29 @@ footer .social-icons a:hover {
 }
 
 /* Chatbot */
+.chatbot-icon {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #f39c12;
+    padding: 15px;
+    border-radius: 50%;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    z-index: 1000;
+}
+
+.chatbot-icon:hover {
+    background-color: #e67e22;
+    transform: scale(1.1);
+}
+
+.chatbot-icon img {
+    width: 40px;
+    height: 40px;
+}
+
 .chatbot-container {
     position: fixed;
     bottom: 20px;
@@ -160,33 +183,59 @@ footer .social-icons a:hover {
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7);
     border-radius: 10px;
     overflow: hidden;
-    opacity: 0; /* Inicialmente oculto */
-    transform: translateY(20px); /* Inicia ligeramente desplazado */
+    opacity: 0;
+    transform: translateY(20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: white;
 }
 
 /* Mostrar cuando se activa */
 .chatbot-container.show {
     opacity: 1;
-    transform: translateY(0); /* Mueve el chatbot a su posición original */
+    transform: translateY(0);
 }
 
 /* Ocultar con animación */
 .chatbot-container.hide {
     opacity: 0;
-    transform: translateY(20px); /* Mueve el chatbot hacia abajo mientras desaparece */
+    transform: translateY(20px);
+}
+
+.chatbot-header {
+    background-color: #f39c12;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.close-btn:hover {
+    transform: scale(1.2);
 }
 
 /* Contact Form */
 .contact-form {
-    background: rgba(0, 0, 0, 0.8); /* Fondo oscuro con algo de transparencia */
+    background: rgba(0, 0, 0, 0.8);
     padding: 40px;
-    border-radius: 15px; /* Bordes redondeados */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7); /* Sombra sutil para profundidad */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
     max-width: 700px;
-    margin: 50px auto; /* Centrado en la página con márgenes */
+    margin: 50px auto;
     color: white;
-    border: 2px solid #f39c12; /* Borde dorado para dar estilo */
+    border: 2px solid #f39c12;
 }
 
 .contact-form h2 {
@@ -206,7 +255,7 @@ footer .social-icons a:hover {
     font-weight: bold;
     margin-bottom: 10px;
     display: block;
-    color: #f39c12; /* Color dorado para las etiquetas */
+    color: #f39c12;
 }
 
 .contact-form input,
@@ -214,8 +263,8 @@ footer .social-icons a:hover {
     width: 100%;
     padding: 15px;
     border-radius: 8px;
-    border: 2px solid #f39c12; /* Borde dorado */
-    background: rgba(255, 255, 255, 0.1); /* Fondo translúcido */
+    border: 2px solid #f39c12;
+    background: rgba(255, 255, 255, 0.1);
     color: white;
     font-size: 16px;
     transition: all 0.3s ease;
@@ -224,8 +273,8 @@ footer .social-icons a:hover {
 .contact-form input:focus,
 .contact-form textarea:focus {
     outline: none;
-    border: 2px solid #e67e22; /* Borde naranja al enfocar */
-    background: rgba(255, 255, 255, 0.2); /* Fondo más claro al enfocar */
+    border: 2px solid #e67e22;
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .contact-form button {

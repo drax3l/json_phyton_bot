@@ -1,47 +1,46 @@
-// Obtén los elementos necesarios del DOM
-const chatbotIcon = document.getElementById('chatbot-icon');
-const chatbotContainer = document.getElementById('chatbot-container');
-const closeChatbotBtn = document.getElementById('close-chatbot');
-const iframeChatbot = document.getElementById('iframe-chatbot');
-const dfMessenger = document.getElementById('df-messenger');
+document.addEventListener('DOMContentLoaded', function() {
+    const chatbotContainer = document.querySelector('.chatbot-container');
+    const iframeChatbot = document.getElementById('iframe-chatbot');
+    const chatbotIcon = document.querySelector('.chatbot-icon');
+    const closeBtn = document.querySelector('.close-btn');
 
-// Función para abrir el chatbot (mostrar solo uno)
-let isChatbotOpen = false;
+    let isChatbotOpen = false;
 
-chatbotIcon.addEventListener('click', () => {
-    // Solo muestra el chatbot si no está abierto
-    if (!isChatbotOpen) {
-        // Alterna entre mostrar el iframe y el df-messenger
-        if (iframeChatbot.style.display === 'none') {
-            iframeChatbot.style.display = 'block';
-            dfMessenger.style.display = 'none';
+    chatbotIcon.addEventListener('click', () => {
+        isChatbotOpen = !isChatbotOpen;
+        if (isChatbotOpen) {
+            chatbotContainer.classList.add('show');
+            chatbotContainer.classList.remove('hide');
         } else {
-            iframeChatbot.style.display = 'none';
-            dfMessenger.style.display = 'block';
+            chatbotContainer.classList.add('hide');
+            chatbotContainer.classList.remove('show');
         }
+    });
 
-        // Añade la clase 'show' para animar la aparición
-        chatbotContainer.classList.remove('hide');
-        chatbotContainer.classList.add('show');
+    closeBtn.addEventListener('click', () => {
+        isChatbotOpen = false;
+        chatbotContainer.classList.add('hide');
+        chatbotContainer.classList.remove('show');
+    });
 
-        // Muestra el contenedor del chatbot
-        chatbotContainer.style.display = 'block';
-        isChatbotOpen = true;  // Marca el chatbot como abierto
+    // Ajustar el tamaño del iframe del chatbot en función del tamaño de la ventana
+    function adjustChatbotSize() {
+        if (window.innerWidth <= 600) {
+            chatbotContainer.style.width = '100%';
+            chatbotContainer.style.height = '100%';
+            chatbotContainer.style.bottom = '0';
+            chatbotContainer.style.right = '0';
+            chatbotContainer.style.borderRadius = '0';
+        } else {
+            chatbotContainer.style.width = '350px';
+            chatbotContainer.style.height = '430px';
+            chatbotContainer.style.bottom = '20px';
+            chatbotContainer.style.right = '20px';
+            chatbotContainer.style.borderRadius = '10px';
+        }
     }
-});
 
-// Función para cerrar el chatbot con animación
-closeChatbotBtn.addEventListener('click', () => {
-    // Añade la clase 'hide' para animar el cierre
-    chatbotContainer.classList.remove('show');
-    chatbotContainer.classList.add('hide');
-
-    // Después de la animación, ocultamos el contenedor completamente
-    setTimeout(() => {
-        chatbotContainer.style.display = 'none';
-        iframeChatbot.style.display = 'none'; // Asegura que el iframe también se oculte
-        dfMessenger.style.display = 'none'; // Asegura que el df-messenger también se oculte
-    }, 300); // Tiempo que dura la animación antes de ocultar el contenedor
-
-    isChatbotOpen = false;  // Marca el chatbot como cerrado
+    // Ajustar el tamaño del chatbot al cargar la página y al cambiar el tamaño de la ventana
+    adjustChatbotSize();
+    window.addEventListener('resize', adjustChatbotSize);
 });
