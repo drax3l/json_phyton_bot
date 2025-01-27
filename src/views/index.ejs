@@ -11,12 +11,14 @@
   <body>
     <!-- Navegación -->
     <%- include('partials/navigation') %>
-
+    <!--logo fond-->
+    
     <!-- Sección Principal -->
     <div class="main-content">
       <div class="hero">
+       <img class="logo" src="/img/Urbanthreadslog.png">
         <h1>URBAN THREADS</h1>
-        <p>Bienvenido a Tu Tienda de Ropa</p>
+        <p>¡Bienvenido!</p>
         <p>
           Descubre las últimas tendencias en moda y encuentra lo que más te
           gusta.
@@ -24,6 +26,7 @@
         <button class="btn" onclick="location.href='/about'">Conoce más</button>
       </div>
     </div>
+    <!--INICIO SECCIÓN GALERÍA-->
     <div class="contenedor-galeria">
         <h1 class="title-galeria">NUESTRA GALERÍA</h1>
         <section class="galeria">
@@ -40,7 +43,7 @@
             <a href="#image11"><img src="/img/11.png" alt="" /></a>
             <a href="#image12"><img src="/img/12.png" alt="" /></a>
         </section>
-</div>
+    </div> 
     <!--Inicio scroll al hacer click-->
     <article class="light-box" id="image1">
         <a href="#image6" class="next"><i class="fa-solid fa-arrow-left"></i></a>
@@ -54,78 +57,160 @@
         <a href="#image3" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image3">
         <a href="#image2" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/3.png" alt="">
         <a href="#image4" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image4">
         <a href="#image3" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/4.png" alt="">
         <a href="#image5" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image5">
         <a href="#image4" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/5.png" alt="">
         <a href="#image6" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image6">
         <a href="#image5" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/6.png" alt="">
         <a href="#image7" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image7">
         <a href="#image6" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/7.png" alt="">
         <a href="#image8" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image8">
         <a href="#image7" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/8.png" alt="">
         <a href="#image9" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image9">
         <a href="#image8" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/9.png" alt="">
         <a href="#image10" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image10">
         <a href="#image9" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/10.png" alt="">
         <a href="#image11" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image11">
         <a href="#image10" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/11.png" alt="">
         <a href="#image12" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
-
     <article class="light-box" id="image12">
         <a href="#image11" class="next"><i class="fa-solid fa-arrow-left"></i></a>
         <img src="/img/12.png" alt="">
         <a href="#image1" class="next"><i class="fa-solid fa-arrow-right"></i></a>
         <a href="#" class="close">X</a>
     </article>
+    <!--FIN GALERÍA-->
+
+    <!--INICIO SECCIÓN OFERTAS-->
+    <div class="titleSectionOferta">
+        <h1 class="ofertatxt">AHORA EN OFERTA</h1>
+        <h2>HASTA 50% OFF</h2>
+    </div>
+    <div class="productos-oferta">
+        <div class="producto">
+            <div class="imagen-container">
+                <img src="/img/oferta1.jpg" class="img-frente">
+                <img src="/img/oferta1-frente.jpg" class="img-posterior">
+            </div>
+            <div class="info">
+                <p>HODDIE - MONEY MAKERS</p>
+                <span class="precio-original">S/.170.00</span>
+                <span class="precio-descuento">S/.85.00</span>
+                <span class="descuento">50% DCTO.</span>
+            </div>
+        </div>
+        <div class="producto">
+            <div class="imagen-container">
+                <img src="/img/oferta2.jpg" class="img-frente">
+                <img src="/img/oferta2-frente.jpg" class="img-posterior">
+            </div>
+            <div class="info">
+                <p>POLO - OVERSIZE WHITE GMC</p>
+                <span class="precio-original">S/.120.00</span>
+                <span class="precio-descuento">S/.60.00</span>
+                <span class="descuento">50% DCTO.</span>
+            </div>
+        </div>
+        <div class="producto">
+            <div class="imagen-container">
+                <img src="/img/oferta3.jpg" class="img-frente">
+                <img src="/img/oferta3-frente.jpg" class="img-posterior">
+            </div>
+            <div class="info">
+                <p>POLO - BOXY OVERSIZE LINEN</p>
+                <span class="precio-original">S/.140.00</span>
+                <span class="precio-descuento">S/.70.00</span>
+                <span class="descuento">50% DCTO.</span>
+            </div>
+        </div>
+    </div>
+    
 
 
+
+
+
+
+
+
+    <!--<div class="contenedoroferta">
+        <h1 class="ofertatxt">AHORA EN OFERTA</h1>
+        <h2>HASTA 50% OFF</h2>
+        <section class="prodOferta">
+            <div class="producto">
+                <img src="/img/oferta1.jpg" class="img-frente">
+                <img src="/img/oferta1-frente.jpg" class="img-posterior">
+            </div>
+            <div class="producto">
+                <img src="/img/oferta2.jpg" class="img-frente">
+                <img src="/img/oferta2-frente.jpg" class="img-posterior">
+            </div>
+            <div class="producto">
+                <img src="/img/oferta3.jpg" class="img-frente">
+                <img src="/img/oferta3-frente.jpg" class="img-posterior">
+            </div>
+        </section>
+    </div>
+    <div class="infoOfer">
+        <section class="textoOferta">
+            <p>HODDIE - MONEY MAKERS</p>
+            <span class="precio-original">S/.170.00</span>
+            <span class="precio-descuento">S/.85.00</span>
+            <span class="descuento">50% DCTO.</span>
+        </section>
+        <section class="textoOferta">
+            <p>POLO - OVERSIZE WHITE GMC</p>
+            <span class="precio-original">S/.120.00</span>
+            <span class="precio-descuento">S/.60.00</span>
+            <span class="descuento">50% DCTO.</span>
+        </section>
+        <section class="textoOferta">
+            <p>POLO - BOXY OVERSIZE LINEN</p>
+            <span class="precio-original">S/.140.00</span>
+            <span class="precio-descuento">S/.70.00</span>
+            <span class="descuento">50% DCTO.</span>
+        </section>
+    </div>-->
+
+    
     <!-- Footer -->
     <%- include('partials/footer') %> <%- include('partials/bot') %>
   </body>

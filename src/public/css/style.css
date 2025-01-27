@@ -7,6 +7,17 @@ body {
     background-size: cover;
     color: white;
 }
+h1{
+    font-size: 80px;
+    padding: 0px 0;
+    margin: 0;
+}
+.logo{
+    position:inherit;
+    width: 180px;
+    height: 150px;
+    align-items: center;
+}
 
 /* Navbar styles */
 .menu {
@@ -51,7 +62,7 @@ body {
 }
 .galeria{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     width: 100%;
     margin: auto;
     padding: 0;
@@ -79,7 +90,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(243, 156, 18, 0); /* Naranja con opacidad 0 */
+    background: rgba(243, 156, 18, 0); 
     transition: 0.3s ease-in-out;
 }
 
@@ -135,6 +146,111 @@ body {
     line-height: 40px;
     text-decoration: none;
     text-align: center;
+}
+
+/*Sección Oferta*/
+/* Contenedor principal de la sección de ofertas */
+.titleSectionOferta{
+    background-color: rgb(0, 0, 0);
+    border-top: 10px solid #747474;
+}
+.ofertatxt{
+    font-family:'Times New Roman', Times, serif;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+}
+h2{
+    font-family:'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+}
+.productos-oferta {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    justify-content: center;
+    padding: 20px;
+    background-color: black;
+    text-align: center;
+}
+.producto {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 300px;
+}
+.imagen-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+.img-frente, .img-posterior {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+/* La imagen posterior está oculta por defecto */
+.img-posterior {
+    opacity: 0;
+}
+/* Efecto hover para cambiar de imagen */
+.imagen-container:hover .img-frente {
+    opacity: 0;
+}
+.imagen-container:hover .img-posterior {
+    opacity: 1;
+}
+/* Información del producto */
+.info {
+    margin-top: 10px;
+    color: white;
+    width: 100%;
+}
+.info p {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.precio-original { /*Tachado*/
+    font-size: 18px;
+    color: gray;
+    text-decoration: line-through;
+    display: block;
+}
+.precio-descuento {
+    font-size: 21px;
+    font-weight: bold;
+    color: #f39c12;
+    display: block;
+}
+/* Etiqueta de descuento */
+.descuento {
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #e74c3c; 
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 5px;
+}
+/*Animación info*/
+.info {
+    transform: scale(1);
+    transition: transform 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.8); /* Color inicial */
+    transition: background-color 0.4s ease-in-out;
+}
+.producto:hover .info {
+    transform: scale(1.05); /* Pequeño zoom */
+    background-color: rgba(59, 10, 10, 0.952); /* Cambia a un tono naranja */
 }
 
 /* Chatbot styles */
